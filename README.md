@@ -17,6 +17,16 @@ As for other libraries, such as those required for interpolation (*scipy*) or ex
 
 
 ## 0. Problem Formulation
+- Behavior cloning can be considered the most fundamental method of using neural networks for learning from demonstration. Its goal is to find the mapping between demonstrated state-action pairs through supervised learning.
+- Specifically, the demonstrations $X$ can be described as sequences of states $s$ and actions $a$, $X={(s_1,a_1), (s_2,a_2), ... , (s_n,a_n)}$. Then the behavior cloning based on neural networks is to trained the mapping of $S \to A$. Once trained, the network can predict the required action based on the current state, enabling the agent to imitate the demonstration.
+
+However, this approach also has its limitations.
+
+行为克隆应该是最基础且见简单的使用神经网络进行演示学习的方法，其目的是模仿演示的策略检测。
+具体来说，行为克隆，本质上是状态-动作的策略监督学习
+但这说明也有局限性
+
+
 ## 1. Get Demonstrations in Simulation
 ## 2. Behavioral Cloning of Demonstrations based on Neural Networks
 ## 3. Test the Trained Behavioral Cloning Model in Simulation
