@@ -25,6 +25,15 @@ To simplify the simulation, Cheems_JH considered **a object grasping task with a
 Based on this, the following dataset format was chosen: during the teleoperated demonstrations of the robotic arm, only the gripper's position and its open/close state were recorded. This way, **the gripper's position and open/close state and the position of object at the current time step can be used as the state**, while **those at the next time step can be treated as the action**. When apply the trained network, the current gripper position and open/close state can be sampled as input, and the network predicts the required action (gripper position and open/close state) for the next time step, then the robotic arm is controlled via inverse kinematics to transition to the predicted action.
 
 ## 1. Get Demonstrations in Simulation
+> Code: /codes/pybullet_get_demonstration.py
+
+This code constructs a simulation environment in PyBullet where a Panda robotic arm performs object grasping on a tabletop, as shown in the figure below. You can control the robotic arm using the keyboard. The control principle is primarily based on inverse kinematics, adjusting the gripper's position while keeping its orientation fixed. During keyboard control, the gripper's position $(P_gx, P_gy, P_gz)$, the target object's position $(P_ox, P_oy, P_oz)$, and the gripper's open/close state $S_g = 1 pr 0$ are recorded at a frequency of 10 Hz. The usage process of this code is as follows:
+
+[1] 运行代码后，等待机械臂移动到初始状态并稳定；
+[2] 按下键盘"q"开始采集演示，这时候可以键盘控制机械臂；
+[3] 通过wasdzx和空格控制机械臂末端的位置和夹爪的开合；
+[4] 按下键盘
+[5]
 
 ## 2. Behavioral Cloning of Demonstrations based on Neural Networks
 ## 3. Test the Trained Behavioral Cloning Model in Simulation
