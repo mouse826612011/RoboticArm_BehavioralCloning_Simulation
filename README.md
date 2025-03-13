@@ -29,6 +29,10 @@ Based on this, the following dataset format was chosen: during the teleoperated 
 
 This code constructs a simulation environment in PyBullet where a Panda robotic arm performs object grasping on a tabletop, as shown in the figure below. You can control the robotic arm using the keyboard. The control principle is primarily based on inverse kinematics, adjusting the gripper's position while keeping its orientation fixed. During keyboard control, the gripper's position $(P_gx, P_gy, P_gz)$, the target object's position $(P_ox, P_oy, P_oz)$, and the gripper's open/close state $S_g = 1 pr 0$ are recorded at a frequency of 10 Hz. 
 
+<p align="center">
+  <img src="pictures/get_demo1.png" alt="Statoscope example" width="600">
+</p>
+
 The usage process of this code is as follows:
 
 [1] Running the code, wait for the robotic arm to move to the initial position and stabilize.
@@ -37,10 +41,11 @@ The usage process of this code is as follows:
 
 [3] Use the "w,a,s,d" keys to control the horizontal movement of the robotic arm's end effector, the "z,x" keys to control the height, and the spacebar to control the gripper's closing.
 
-[4] After completing the task, press the "e" key to stop collecting the demonstration and exit the code. The collected demonstration will be saved as an Excel file in the code directory with the name "demo+time.xlsx".
+[4] After completing the task, press the "e" key to stop collecting the demonstration and exit the code. The collected demonstration will be saved as an Excel file in the code directory with the name "demo+time.xlsx", as shown in the folliwing figure.
 
-<img src="figures/get_demo.png" align="right"
-     alt="Size Limit logo by Anton Lovchikov" width="250" height="500">
+<p align="center">
+  <img src="pictures/get_demo2.png" alt="Statoscope example" width="600">
+</p>
 
 ## 2. Behavioral Cloning of Demonstrations based on Neural Networks
 ## 3. Test the Trained Behavioral Cloning Model in Simulation
