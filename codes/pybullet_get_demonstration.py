@@ -97,8 +97,8 @@ while (1):
     # sampling the states in 10hz
     if simulate_phase == 1:
         sampling_cnt = sampling_cnt + 1
-    if sampling_cnt == 6:  #渲染6帧采样一次
-        sampling_cnt = 0 # 计数器清零
+    if sampling_cnt == 6: 
+        sampling_cnt = 0 
 
         # get the pos of robot's end effector
         end_state = p.getLinkState(pandaUid, pandaEndEffectorIndex)
