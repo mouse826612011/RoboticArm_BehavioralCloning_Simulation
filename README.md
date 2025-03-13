@@ -16,4 +16,7 @@ As for other libraries, such as those required for interpolation (*scipy*) or ex
 - **Network testing** (using the trained network to drive the Panda robotic arm in PyBullet to check whether it can complete the task like the demonstration).
 
 
-## 1. Get Demonstrations
+## 0. Problem Formulation
+## 1. Get Demonstrations in Simulation
+## 2. Behavioral Cloning of Demonstrations based on Neural Networks
+## 3. Test the Trained Behavioral Cloning Model in Simulation
