@@ -18,15 +18,12 @@ As for other libraries, such as those required for interpolation (*scipy*) or ex
 
 ## 0. Problem Formulation
 - Behavior cloning can be considered the most fundamental method of using neural networks for learning from demonstration. Its goal is to find the mapping between demonstrated state-action pairs through supervised learning.
-- Specifically, the demonstrations $X$ can be described as sequences of states $s$ and actions $a$, $X={(s_1,a_1), (s_2,a_2), ... , (s_n,a_n)}$. Then the behavior cloning based on neural networks is to trained the mapping of $S \to A$. Once trained, the network can predict the required action based on the current state, enabling the agent to imitate the demonstration.
+- Specifically, the demonstrations $X$ can be described as sequences of states $s$ and actions $a$, $X=[(s_1,a_1), (s_2,a_2), ... , (s_n,a_n)]$. Then the behavior cloning based on neural networks is to trained the mapping of $S \to A$. Once trained, the network can predict the required action based on the current state, enabling the agent to imitate the demonstration.
+- However, this also clearly reveals the limitations of behavior cloning: the dataset struggles to cover the entire task space, resulting in poor generalization or requiring a large amount of demo for good generalization. This leads to the phenomenon of "error accumulation" in behavior cloning—if the predicted action is worse, it may lead to a rare state in the next timestep, which in turn causes even worse action predictions.
 
-However, this approach also has its limitations.
-
-行为克隆应该是最基础且见简单的使用神经网络进行演示学习的方法，其目的是模仿演示的策略检测。
-具体来说，行为克隆，本质上是状态-动作的策略监督学习
-但这说明也有局限性
-
+To simplify the simulation, Cheems_JH chose the following dataset format: during the teleoperated demonstrations of the robotic arm, only the gripper's position and its open/close state were recorded. This way, **the gripper's position and open/close state and the position of object at the current time step can be used as the state**, while **those at the next time step can be treated as the action**. When apply the trained network, the current gripper position and open/close state can be sampled as input, and the network predicts the required action (gripper position and open/close state) for the next time step, then the robotic arm is controlled via inverse kinematics to transition to the predicted action.
 
 ## 1. Get Demonstrations in Simulation
+
 ## 2. Behavioral Cloning of Demonstrations based on Neural Networks
 ## 3. Test the Trained Behavioral Cloning Model in Simulation
