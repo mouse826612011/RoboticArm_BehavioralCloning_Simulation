@@ -27,7 +27,7 @@ Based on this, the following dataset format was chosen: during the teleoperated 
 ## 1. Get Demonstrations in Simulation
 > Code: /codes/pybullet_get_demonstration.py
 
-This code constructs a simulation environment in PyBullet where a Panda robotic arm performs object grasping on a tabletop, as shown in the figure below. You can control the robotic arm using the keyboard. The control principle is primarily based on inverse kinematics, adjusting the gripper's position while keeping its orientation fixed. During keyboard control, the gripper's position $(P_gx, P_gy, P_gz)$, the target object's position $(P_ox, P_oy, P_oz)$, and the gripper's open/close state $S_g = 1 pr 0$ are recorded at a frequency of 10 Hz. 
+This code constructs a simulation environment in PyBullet where a Panda robotic arm performs object grasping on a tabletop, as shown in the figure below. You can control the robotic arm using the keyboard. The control principle is primarily based on inverse kinematics, adjusting the gripper's position while keeping its orientation fixed. During keyboard control, the gripper's position $(P_gx, P_gy, P_gz)$, the target object's position $(P_ox, P_oy, P_oz)$, and the gripper's open/close state $S_g = 1 or 0$ are recorded at a frequency of 10 Hz. 
 
 <p align="center">
   <img src="figures/get_demo1.png" alt="Statoscope example" width="600">
